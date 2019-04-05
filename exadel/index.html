@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>glebogram</title>
+    <link rel = "stylesheet" href = "styles/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1 class = "site-name"> glebogram </h1>
+        <button class="add-post"><i class="fas fa-plus fa-2x"></i></button>
+        <div class = "user-name"></div>
+        <button class = "log-out"><i class="fas fa-sign-out-alt fa-2x"></i></button>
+        <button class = "sign-in"><span class="sign-in-span">sign in</span></button>
+    </header>
+    <main>
+        <div class="add-post-form">
+            <p class="dragndrop-text">dragndrop</p>
+            <div class="dragndrop"></div>
+            <div><p>user_name</p><input type = "text" placeholder="" class="inp-user" readonly></div>    
+            <div><p>current_date</p><div class="current-date"></div></div>
+            <div><p>hashtags</p><textarea name="text"></textarea> </div>   
+            <div><p>photo description</p><textarea  name = "text"></textarea></div>
+            <button>continue</button>  
+        </div>
+        <div class="authorization-form">
+            <div><p>login</p> <input class="input-auth" type = "text"></div>    
+            <div><p>password</p> <input class="input-auth" type = "text"></div>
+            <button>login</button>  
+        </div> 
+        <div id = "wrapper"> 
+            <!--Here will be our posts-->
+            <template id="post-template">
+                <div class = "post">
+                    <p class = "postInfo">
+                        <b data-target="author"></b><date data-target="createdAt"></date> 
+                    </p>
+                    <div class="image">
+                        <img data-target="photolink"  alt="1" width="640" height="640">
+                    </div>
+                    <div class = "description">
+                        <button class="like" ><i class="far fa-thumbs-up fa-2x"></i></button><p class="likes-count" data-target="likes"></p>
+                        <button class="edit-post"><i class="far fa-edit fa-2x"></i></button>
+                        <button class="delete-post"><i class="far fa-trash-alt fa-2x"></i></button>
+                        <span class="text-description">
+                            <b data-target="author"></b>
+                            <div data-target="description"></div>
+                            <button class="description-button">...</button><br> 
+                        </span>
+                        <ul class="tags-block">
+                        </ul>  
+                    </div>
+                </div>
+            </template>
+        </div>
+        <aside id = "sidebar">
+            <form action="javascript:alert('filter')" method="post" class="search-form">
+                <input type="search" name="name" placeholder="search" class="input"/>
+                <button type="submit" class="submit"></button>
+            </form>
+            <button class = "filter"><span class = "filter-span">filter by date</span> </button>
+            <form class="filter-form">
+                <p>from </p><input class="date-input" type="date" value="1999-12-22">
+                <p><br>to </p><input class="date-input" type="date" value="2019-04-04">
+                <button class="filter-button-reset">reset</button>
+                <button class="filter-button-confirm">filter!</button>
+            </form>   
+        </aside>
+    </main> 
+    <button id = "show-more">show more...</button>
+    <footer>
+        <div class = "footer-site-name"> glebogram </div>
+        <p class="footer-elems">
+            <b>All content © 2019 Gleb Kazachynski</b>
+            <b> FAMCS, 2 course 7 group</b>
+            <b><time datetime="2019-03-21">last update - today ;)</time></b>
+            <a href = "mailto: raul221299@gmail.com">raul221299@gmail.com</a> 
+        </p>  
+    </footer>
+    <script src="scripts/posts.js"></script>
+    <script src="scripts/view.js"></script>
+    <script src="scripts/MVC.js"></script>
+    <script src="scripts/test.js"></script>
+</body>
+</html>
